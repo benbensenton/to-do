@@ -5,7 +5,7 @@
         - bokeh is pretty and convienent but not fast enough   
         - matplotlib to slow
         - plotly no streaming
-        - hadoop/pyspark/zeromq/dask/vaex/ray/modin/pystore currently overkill 
+        - hadoop/pyspark/zeromq/dask/vaex/ray/modin/pyarrow/pystore currently overkill 
         - https://github.com/ray-project/ray
 
 - ticker symbol list generator script
