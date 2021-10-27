@@ -1,6 +1,7 @@
 # to-do
 
-- streamplotter module, probably back to pyqt graph as module in jupyterlab
+- streamplotter module, probably back to pyqt graph as module in jupyterlab (https://gist.github.com/iverasp/9349dffa42aeffb32e48a0868edfa32d ,                                                                                                                  https://pyqtgraph.readthedocs.io/en/latest/ ,                                                                                                                                      https://github.com/bokeh/bokeh/blob/2.4.0/examples/app/ohlc/main.py ,
+                                                                             https://www.numpyninja.com/post/hdf5-file-format-with-pandas)
         - since pyqt as app not flexible enough
         - bokeh is pretty and convienent but not fast enough   
         - matplotlib to slow
