@@ -33,6 +33,9 @@
      - only needed once a year maybe                                                                                                  GER   NASDAQ ETF       AA
                                                                                                                                       JP    ...    ...       AAA
                                                                                                                                       ...
+- expand hdf5 writer for minute intraday and symbol_master write capabilitys
+
+
 - kalmann on historic as initial start with streamplotter
 
 
