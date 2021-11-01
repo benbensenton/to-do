@@ -10,14 +10,17 @@
         - https://github.com/ray-project/ray
 
 
-- options, future, etc
 
 
 
 - minute download function integration in bs app           ✓ done
-        - no return value check for empty or error csv, handle it in hdf5 writer?  --> we dont need to keep processing the 24 slices for symbol url that returns a empty list
-        - pop it from queue, break loop, continue with new symbol, what are the error cases: either limit reached(should not occure due to implementation) or empty/nonsense               data(filter it out by checking the http response for a specific string)
-        - combined with imediate hdf5 writting option if wanted, by popup to specify Store location or in path when location empty and csv deletion as option
+        - return value check
+              . no return value check for empty or error csv, handle it in hdf5 writer?  --> we dont need to keep processing the 24 slices for symbol url that returns a empty                   list, pop it from queue, break loop, continue with new symbol, what are the error cases: either limit reached(should not occure due to implementation) or                         empty/nonsense data-API error etc(filter it out by checking the http response for a specific string)
+        - no immediate hdf5 writting option, since additional computation needed (e.g. timestamp as index)
+        - implement slice selection 
+              . as if else statement to select slice tuple
+              . gui implementation as selection, box appears if intraday function is selected
+              . this running month 'year1slice1', last 3 month (year1slice1,year1slice2,year1slice3), last year (), all () 
 
 - symbol search query + implementation in app --> gives symbol masterfile but not suvivorship biased free (they dont serve data on delisted companys) wich needs to be maintained 
         - ticker symbol list generator script              ✓ done
@@ -37,6 +40,11 @@
 
 
 - kalmann on historic as initial start with streamplotter
+
+
+- additional data sources
+        - options, future, etc
+
 
 
 
