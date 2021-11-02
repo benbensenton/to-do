@@ -32,11 +32,21 @@
         - sql bc hdf5 to unstructured or as df in hdf5 all with indexing
         - 4 letter search string with letters 26^4 combination in length 1-4 places = 475254 combinations, free account 5 request/min 500r/d = 100 min/d, 950days ≈ 2.5years
          paid account: 75 request/min / unlimited request/day: 24*60*75= 108000 requests/day  ≈ 4.5 days @ 24h uptime ⇒ free tier aws? (unnecessary overhead, but good practice,          docker etc, the limiting factor is now return answer delay ⇒ async requests, multiprocess easyer? , every thread appends creates 1 file or all threads appending to 1            file
-        - symbolist is made unique and sorted by country,exchange, type(equity, etf usw), symbol    Order-structure: Symbol_Master -->USA-->NYSE-->EQUITY--> A
-     - only needed once a year maybe                                                                                                  GER   NASDAQ ETF       AA
-                                                                                                                                      JP    ...    ...       AAA
+        - symbolist is made unique and sorted by country,exchange, type(equity, etf usw), symbol    Order-structure: Symbol_Master -->USA-->NYSE-->EQUITY-->Minute_Intraday--> A
+     - only needed once a year maybe                                                                                                  GER   NASDAQ ETF      Daily              AA
+                                                                                                                                      JP    ...    ...                        AAA
                                                                                                                                       ...
 - expand hdf5 writer for minute intraday and symbol_master write capabilitys
+
+
+- query hdf5 --> has it the right capabilities?
+        - saved columns need to be data_columns otherwise select does not work
+        - e.g. finding the .max() value of all symbols in all US stocks
+               path_to_tables = 
+               with pd.HDFStore("store.h5") as store:
+                   for path_to_table in path_to_tables:
+                        store.select("path_to_table", where=['Volume.max()'])
+                        # pd.read_hdf("store_tl.h5", "path_to_table", where=['Volume.max()'])   // probably functions dont work?  
 
 
 - kalmann on historic as initial start with streamplotter
