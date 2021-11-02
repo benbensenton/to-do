@@ -32,6 +32,7 @@
         - sql bc hdf5 to unstructured or as df in hdf5 all with indexing
         - 4 letter search string with letters 26^4 combination in length 1-4 places = 475254 combinations, free account 5 request/min 500r/d = 100 min/d, 950days ≈ 2.5years
          paid account: 75 request/min / unlimited request/day: 24*60*75= 108000 requests/day  ≈ 4.5 days @ 24h uptime ⇒ free tier aws? (unnecessary overhead, but good practice,          docker etc, the limiting factor is now return answer delay ⇒ async requests, multiprocess easyer? , every thread appends creates 1 file or all threads appending to 1            file
+         - currently 10-20sec for 5x600kb files
         - symbolist is made unique and sorted by country,exchange, type(equity, etf usw), symbol    Order-structure: Symbol_Master -->USA-->NYSE-->EQUITY-->Minute_Intraday--> A
      - only needed once a year maybe                                                                                                  GER   NASDAQ ETF      Daily              AA
                                                                                                                                       JP    ...    ...                        AAA
