@@ -37,6 +37,8 @@
      - only needed once a year maybe                                                                                                  GER   NASDAQ ETF      Daily              AA
                                                                                                                                       JP    ...    ...                        AAA
                                                                                                                                       ...
+     - make it async since io bound, not multithread, async / aiohttp / tornado / graphQl / sanic / flask / node.js
+
 - expand hdf5 writer for minute intraday and symbol_master write capabilitys
 
 
