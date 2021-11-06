@@ -9,7 +9,13 @@
         - hadoop/pyspark/zeromq/dask/vaex/ray/modin/pyarrow/pystore currently overkill 
         - https://github.com/ray-project/ray
 
-
+- read .json and parse into db or flatfile?
+  - whats the use case?
+    - 
+  -check for symbol uniqueness (set?)
+    1. get all symbol keys from all files
+    2. make unique list
+    3. access the file which have the unique key, eg. keep ponter to filename, or better make 1 big table, keys are columns, than make it unique, approc 1gb file, good enough          for memory or chunk it
 
 
 
@@ -21,23 +27,29 @@
               . as if else statement to select slice tuple
               . gui implementation as selection, box appears if intraday function is selected
               . this running month 'year1slice1', last 3 month (year1slice1,year1slice2,year1slice3), last year (), all () 
+              
+- repackage app
 
-- symbol search query + implementation in app --> gives symbol masterfile but not suvivorship biased free (they dont serve data on delisted companys) wich needs to be maintained 
+- symbol search query + implementation in app --> gives symbol masterfile but not suvivorship biased free (they serve data on delisted companys) wich needs to be maintained 
         - ticker symbol list generator script              ✓ done
-        - allow 2 types of input, either user typed string also as list to process for every entry, and as internally generated whole string posibility when a certain leading             symbol is in string, e.g. @all, when found run the generator function, write out that string list to csv
-        - make a processed list(write out as csv after every sucess), when app crashes or something needs to restart, compare @all.csv with processed.csv, load unique and                 continue
+        - async script for cloud download and .json dump   ✓ done
+        - docker
+        - spin it up in cloud
+        
+        - allow 2 types of app input, either user typed string or as list to process for every entry
+           - check input string/list against completed
         - its a pasting field, same as for symbol, does it support dot notation? xxx.FRA / xxx.LON  --> is it all capital?
         - returns json or csv, use json? or append csv and later parse once (US Mutual Fund 5 Letter code, .FRA notation, others 7 Position Letter/Number combis
         - Build by country, exchange, ticker
         - sql bc hdf5 to unstructured or as df in hdf5 all with indexing
         - 4 letter search string with letters 26^4 combination in length 1-4 places = 475254 combinations, free account 5 request/min 500r/d = 100 min/d, 950days ≈ 2.5years
-         paid account: 75 request/min / unlimited request/day: 24*60*75= 108000 requests/day  ≈ 4.5 days @ 24h uptime ⇒ free tier aws? (unnecessary overhead, but good practice,          docker etc, the limiting factor is now return answer delay ⇒ async requests, multiprocess easyer? , every thread appends creates 1 file or all threads appending to 1            file
-         - currently 10-20sec for 5x600kb files
+         paid account: 75 request/min / unlimited request/day: 24*60*75= 108000 requests/day  ≈ 4.5 days @ 24h uptime ⇒ free tier aws? (unnecessary overhead, but good practice,          docker etc, the limiting factor is now return answer delay ⇒ async requests, for symbol query
+        - multithread/process async for data download every thread appends creates 1 file or all threads appending to 1 file currently 10-20sec for 5x600kb files
         - symbolist is made unique and sorted by country,exchange, type(equity, etf usw), symbol    Order-structure: Symbol_Master -->USA-->NYSE-->EQUITY-->Minute_Intraday--> A
      - only needed once a year maybe                                                                                                  GER   NASDAQ ETF      Daily              AA
                                                                                                                                       JP    ...    ...                        AAA
                                                                                                                                       ...
-     - make it async since io bound, not multithread, async / aiohttp / tornado / graphQl / sanic / flask / node.js
+     - make it async since io bound, not multithread, asyncio / aiohttp / tornado / graphQl / sanic / flask / node.js /httpx
 
 - expand hdf5 writer for minute intraday and symbol_master write capabilitys
 
