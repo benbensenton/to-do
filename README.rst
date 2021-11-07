@@ -8,6 +8,9 @@
         - plotly no streaming
         - hadoop/pyspark/zeromq/dask/vaex/ray/modin/pyarrow/pystore currently overkill 
         - https://github.com/ray-project/ray
+        
+ - asyncio script for minute and daily data needed for bul download       
+        
 
 - read .json and parse into db or flatfile?
   - whats the use case?
