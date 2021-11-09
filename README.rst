@@ -9,16 +9,16 @@
         - hadoop/pyspark/zeromq/dask/vaex/ray/modin/pyarrow/pystore currently overkill 
         - https://github.com/ray-project/ray
         
- - asyncio script for minute and daily data needed for bul download       
+ - asyncio script for minute and daily data needed for bulk download       
         
 
-- read .json and parse into db or flatfile?
-  - whats the use case?
+- read .json flatten into dataframe, pickle dump it with timestamp filename  ✓ done
+  - db or flatfile? whats the use case?
     - 
-  -check for symbol uniqueness (set?)
-    1. get all symbol keys from all files
-    2. make unique list
-    3. access the file which have the unique key, eg. keep ponter to filename, or better make 1 big table, keys are columns, than make it unique, approc 1gb file, good enough          for memory or chunk it
+  -check for symbol uniqueness (pandas.drop_duplicates) 
+    - get all symbol keys from all files
+    - make unique list
+    
 
 
 
