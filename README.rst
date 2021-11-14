@@ -12,10 +12,13 @@
         
  workflow:  
            * run AsyncSymbolQuerry in container                   ✓ ready
-           * mine credits for free key                            ✓ pending
-           * read all json, make unique and dump as json/hdf5     ???
+           * read all Symbol.json, make unique and dump as json   ✓ ready
+           * script to only select certain equitys/counry         ? conditional on unique symbol amount
+           * have a 24/7 docker machine                           ✓ ready
+           * mine credits for free key                            ✓ in progress
            * script for intraday async data                       ✓ not started
            * script for daily async data                          ✓ not started
+           * storage of 150TB might be a bit of a problem
            * flat file hdf5 for timeseries, later db 
            * flat file hdf5 for ticker and company data later sqlight/postgres/mysql
            
