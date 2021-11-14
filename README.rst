@@ -9,6 +9,17 @@
         - hadoop/pyspark/zeromq/dask/vaex/ray/modin/pyarrow/pystore currently overkill 
         - https://github.com/ray-project/ray
         
+        
+ workflow:  
+           * run AsyncSymbolQuerry in container                   ✓ ready
+           * mine credits for free key                            ✓ pending
+           * read all json, make unique and dump as json/hdf5     ???
+           * script for intraday async data                       ✓ not started
+           * script for daily async data                          ✓ not started
+           * flat file hdf5 for timeseries, later db 
+           * flat file hdf5 for ticker and company data later sqlight/postgres/mysql
+           
+        
  - asyncio script for minute and daily data needed for bulk download       
         
 
