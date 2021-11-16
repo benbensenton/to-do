@@ -16,7 +16,7 @@
            * script to only select certain equitys/counry         ? conditional on unique symbol amount
            * have a 24/7 docker machine                           ✓ ready
            * mine credits for free key                            ✓ in progress
-           * script for intraday async data                       ✓ ongoing
+           * script for intraday async data                       ✓ ready
            * script for daily async data                           not started
            * script for fundamental async data                     not started
            * script for earnings calender async data               not started
@@ -30,9 +30,7 @@
            * flat file hdf5 for ticker and company data later sqlight/postgres/mysql
            
         
- - asyncio script for minute and daily data needed for bulk download       
-        
-
+ 
 - read .json flatten into dataframe, pickle dump it with timestamp filename  ✓ done
   - db or flatfile? whats the use case?
     - 
@@ -57,8 +55,8 @@
 - symbol search query + implementation in app --> gives symbol masterfile but not suvivorship biased free (they serve data on delisted companys) wich needs to be maintained 
         - ticker symbol list generator script              ✓ done
         - async script for cloud download and .json dump   ✓ done
-        - docker
-        - spin it up in cloud
+        - docker                                           ✓ done
+        - spin it up in cloud                              / using own compute
         
         - allow 2 types of app input, either user typed string or as list to process for every entry
            - check input string/list against completed
