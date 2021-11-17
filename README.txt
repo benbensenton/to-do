@@ -17,7 +17,7 @@
            * have a 24/7 docker machine                           ✓ ready
            * mine credits for free key                            ✓ in progress
            * script for intraday async data                       ✓ ready
-           * script for daily async data                           not started
+           * script for daily async data                          ✓ ready
            * script for fundamental async data                     not started
            * script for earnings calender async data               not started
            * script for IPO calender async data                    not started
