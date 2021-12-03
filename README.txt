@@ -11,22 +11,23 @@
         
         
  workflow:  
-           * run AsyncSymbolQuerry in container                   ✓ ready
-           * read all Symbol.json, make unique and dump as json   ✓ ready
-           * script to only select certain equitys/counry         ? conditional on unique symbol amount
+           * run AsyncSymbolQuerry in container                   ✓ completed
+           * read all Symbol.json, make unique and dump as csv    ✓ completed
+           * check against another universe                       pending
            * have a 24/7 docker machine                           ✓ ready
-           * mine credits for free key                            ✓ in progress
            * script for intraday async data                       ✓ ready
-           * script for daily async data                          ✓ ready
-           * script for fundamental async data                     not started
-           * script for earnings calender async data               not started
-           * script for IPO calender async data                    not started
-           * script for Listing/Delisting async data               not started
-           * script for earnings/income/balance sheet async data   not started
-           * script for economic indicators async data             not started
+           * script for daily adjusted async data                 ✓ running
+           * script for daily not adjusted async data             ✓ ready
+           * script for fundamental async data                     not started     (includes api calls to Income statement, balance sheet, cashflow,earnings, company overview
+             -only get the data, process later, should be a quick fix
+           * script for earnings calender async data               not needed, simple call
+           * script for IPO calender async data                    not needed, simple call
+           * script for Listing/Delisting async data               not needed, simple call
+           * script for economic indicators async data             not needed, simple call
            
+           -get all the data raw first, process later
            * storage of 150TB might be a bit of a problem
-           * flat file hdf5 for timeseries, later db 
+           * flat file hdf5 for timeseries, later db, feather should be faster?
            * flat file hdf5 for ticker and company data later sqlight/postgres/mysql
            
         
