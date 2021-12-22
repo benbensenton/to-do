@@ -2,6 +2,9 @@
 
 - streamplotter module, probably back to pyqt graph as module in jupyterlab (https://gist.github.com/iverasp/9349dffa42aeffb32e48a0868edfa32d ,                                                                                                                  https://pyqtgraph.readthedocs.io/en/latest/ ,                                                                                                                                      https://github.com/bokeh/bokeh/blob/2.4.0/examples/app/ohlc/main.py ,
                                                                              https://www.numpyninja.com/post/hdf5-file-format-with-pandas)
+- db videos: https://www.youtube.com/c/CMUDatabaseGroup/videos
+
+
         - since pyqt as app not flexible enough
         - bokeh is pretty and convienent but not fast enough   
         - matplotlib to slow
@@ -16,7 +19,7 @@
            * check against another universe                       pending
            * have a 24/7 docker machine                           ✓ ready
            * script for intraday async data                       ✓ ready
-           * script for daily adjusted async data                 ✓ running
+           * script for daily adjusted async data                 ✓ ready
            * script for daily not adjusted async data             ✓ ready
            * script for fundamental async data                     not started     (includes api calls to Income statement, balance sheet, cashflow,earnings, company overview
              -only get the data, process later, should be a quick fix
@@ -26,8 +29,8 @@
            * script for economic indicators async data             not needed, simple call
            
            -get all the data raw first, process later
-           * storage of 150TB might be a bit of a problem
-           * flat file hdf5 for timeseries, later db, feather should be faster?
+           * flat file hdf5 for timeseries, later db, feather should be faster?, parquet as distributed columnar storage for agregated columnar operations
+           --> we dont need transaction db, we want summaries
            * flat file hdf5 for ticker and company data later sqlight/postgres/mysql
            
         
